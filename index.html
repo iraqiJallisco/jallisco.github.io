@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jallisco - موقعي الاحترافي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2d2d2d;
+            --accent: #c41e3a;
+            --accent-light: #e63946;
+            --text: #ffffff;
+            --text-light: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--secondary);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 100px 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections */
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--primary);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
+            border-color: var(--accent-light);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Image Container */
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-light);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid var(--accent);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            color: var(--accent-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عني</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#tutorials">الشروحات</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <h1>🔥 مرحباً بك في Jallisco</h1>
+        <p>موقع احترافي لعرض المشاريع والشروحات والتطبيقات</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>📖 عني</h2>
+            <p>مرحباً! أنا مطور ويب مشغوف بإنشاء تطبيقات احترافية وحديثة. أحب مشاركة معرفتي من خلال هذا الموقع.</p>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/400x300?text=صورتي" alt="صورتي">
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>🚀 المشاريع</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>📱 تطبيق 1</h3>
+                    <p>وصف التطبيق الأول: هذا تطبيق احترافي يساعدك في...</p>
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/300x200?text=المشروع+1" alt="المشروع 1">
+                    </div>
+                    <a href="#" class="btn">اعرف أكثر</a>
+                </div>
+
+                <div class="card">
+                    <h3>💻 تطبيق 2</h3>
+                    <p>وصف التطبيق الثاني: تطبيق رائع يوفر لك...</p>
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/300x200?text=المشروع+2" alt="المشروع 2">
+                    </div>
+                    <a href="#" class="btn">اعرف أكثر</a>
+                </div>
+
+                <div class="card">
+                    <h3>🎨 تطبيق 3</h3>
+                    <p>وصف التطبيق الثالث: تطبيق مميز لإنشاء...</p>
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/300x200?text=المشروع+3" alt="المشروع 3">
+                    </div>
+                    <a href="#" class="btn">اعرف أكثر</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section id="tutorials">
+            <h2>📚 الشروحات</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>🎓 شرح 1: HTML Basics</h3>
+                    <p>تعلم أساسيات HTML خطوة بخطوة...</p>
+                    <a href="#" class="btn">اقرأ الشرح</a>
+                </div>
+
+                <div class="card">
+                    <h3>🎓 شرح 2: CSS للمبتدئين</h3>
+                    <p>دليل شامل لتعلم CSS من الصفر...</p>
+                    <a href="#" class="btn">اقرأ الشرح</a>
+                </div>
+
+                <div class="card">
+                    <h3>🎓 شرح 3: JavaScript Advanced</h3>
+                    <p>تقنيات متقدمة في البرمجة بـ JavaScript...</p>
+                    <a href="#" class="btn">اقرأ الشرح</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>📞 تواصل معي</h2>
+            <p>إذا كان لديك أي أسئلة أو استفسارات، تواصل معي من خلال:</p>
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="https://github.com/jallisco" class="btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:your-email@example.com" class="btn" style="margin-right: 1rem;">
+                    <i class="fas fa-envelope"></i> البريد الإلكتروني
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Jallisco. جميع الحقوق محفوظة.</p>
+        <div>
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">شروط الاستخدام</a>
+            <a href="#">تواصل</a>
+        </div>
+    </footer>
+</body>
+</html>
